@@ -1,10 +1,27 @@
 import React from 'react'
 import { BsPersonCircle,BsFillClipboard2PulseFill, BsFillCheckSquareFill , BsCalendarWeek, BsFillBellFill, BsListCheck,  BsFillGearFill } from 'react-icons/bs';
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function Sidebar({openSidebarToggle , OpenSidebar}) {
     const [data, setData] = useState([]);
+    const [studentInfo, setStudentInfo] = useState({ studentName: '', prn: '' });
+
+
+    useEffect(() => {
+        // Fetch student details when the component mounts
+        axios.get('http://localhost:8081/student_details')
+          .then((response) => {
+            const studentData = response.data[0]; // Assuming a single student record is returned
+            setStudentInfo({
+              studentName: studentData.studentName,
+              prn: studentData.prn,
+            });
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      }, []);
     const fetchData = () => {
         axios.get('http://localhost:8081/hostel_room') 
           .then((response) => {
@@ -24,7 +41,7 @@ function Sidebar({openSidebarToggle , OpenSidebar}) {
     <aside id='sidebar' className={openSidebarToggle ? "sidebar-responsive" : ""}>
         <div className='sidebar-title'>
             <div className='sidebar-brand'>
-                 Student_Name <br /> PRN no
+                {studentInfo.studentName} <br /> PRN - {studentInfo.prn}
             </div>
             <span className='icon close_icon' onClick={OpenSidebar}>X</span>
         </div>

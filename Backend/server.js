@@ -14,7 +14,16 @@ const db = mysql.createConnection({
 app.get('/' , (re, res) => {
     return res.json("From Backend Side");
 })
+// New endpoint to fetch student details
+app.get('/student_details', (req, res) => {
+    const sql = "SELECT * FROM student_details WHERE prn=1"; // Adjust the query as needed
+    db.query(sql, (err, data) => {
+      if (err) return res.json(err);
+      return res.json(data);
+    });
+  });
 
+//Existing end point to fetch hostel room status details
 app.get('/hostel_room',(req, res) =>{
     const sql = "SELECT * FROM hostel_room WHERE prn=1";
     db.query(sql, (err,data) => {
