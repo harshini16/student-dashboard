@@ -16,7 +16,7 @@ app.get('/' , (re, res) => {
 })
 // New endpoint to fetch student details
 app.get('/student_details', (req, res) => {
-    const sql = "SELECT * FROM student_details WHERE prn=1"; // Adjust the query as needed
+    const sql = "SELECT * FROM student_details WHERE prn=2"; // Adjust the query as needed
     db.query(sql, (err, data) => {
       if (err) return res.json(err);
       return res.json(data);
@@ -25,7 +25,7 @@ app.get('/student_details', (req, res) => {
 
 //Existing end point to fetch hostel room status details
 app.get('/hostel_room',(req, res) =>{
-    const sql = "SELECT * FROM hostel_room WHERE prn=1";
+    const sql = "SELECT * FROM hostel_room WHERE prn=2";
     db.query(sql, (err,data) => {
         if(err) return res.json(err);
         return res.json(data);

@@ -8,37 +8,37 @@ function Home() {
       {
         name: 'Subject 1',
         marks: 39,
-        fill: "#8000ff",
+        fill: "#6699cc",
         
       },
       {
         name: 'Subject 2',
         marks: 31,
-        fill: "#df20af",
+        fill: "#79a6d2",
         
       },
       {
         name: 'Subject 3',
         marks: 40,
-        fill: "#20afdf",
+        fill: "#8cb3d9",
         
       },
       {
         name: 'Subject 4',
         marks: 25,
-        fill:'#136c29',
+        fill:'#9fbfdf',
        
       },
       {
         name: 'Subject 5',
         marks: 36,
-        fill: "#f9f906",
+        fill: "#b3cce6",
         
       },
       {
         name: 'Subject 6',
         marks: 40,
-        fill: "#f2460d",
+        fill: "#c6d9ec",
         
       },
     ];   
@@ -48,32 +48,32 @@ function Home() {
       {
         name: 'Subject 1',
         attendance: 100,
-        fill: "#8000ff",
+        fill: "#c6d9ec",
       },
       {
         name: 'Subject 2',
         attendance: 95,
-        fill: "#df20af",
+        fill: "#b3cce6",
       },
       {
         name: 'Subject 3',
         attendance: 80,
-        fill: "#20afdf",
+        fill: "#9fbfdf",
       },
       {
         name: 'Subject 4',
         attendance: 89,
-        fill:'#136c29',
+        fill:'#8cb3d9',
       },
       {
         name: 'Subject 5',
         attendance: 79,
-        fill: "#f9f906",
+        fill: "#79a6d2",
       },
       {
         name: 'Subject 6',
         attendance: 90,
-        fill: "#f2460d",
+        fill: "#6699cc",
       },
     ];   
     
@@ -116,8 +116,8 @@ return (
           </div> */}
       </div>
       <div className="marks-attendance-header">
-        <span className="m-word">Marks</span>
-        <span className="a-word">Attendance</span>
+        <span className="m-word">MARKS</span>
+        <span className="a-word">ATTENDANCE</span>
       </div>
 
 

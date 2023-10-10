@@ -1,18 +1,19 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import Header from './Header'
-import Sidebar from './Sidebar'
+// import Sidebar from './Sidebar'
 import Home from './Home'
+import Navbar from './Navbar'
 
 
 function App() {
   // const [data, setData] = useState([]);
 
-  const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
+  // const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
 
-  const OpenSidebar = () => {
-    setOpenSidebarToggle(!openSidebarToggle)
-  }
+  // const OpenSidebar = () => {
+  //   setOpenSidebarToggle(!openSidebarToggle)
+  // }
 
   {/*
   useEffect(()=>{
@@ -24,9 +25,13 @@ function App() {
 */}
   return (
    <div className='grid-container'>
-    <Header OpenSidebar={OpenSidebar}/>
-    <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
+    <Header /> 
+    <Navbar />
+    {/* OpenSidebar={OpenSidebar} */}
+    {/* <Sidebar /> */}
+    {/* openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} */}
     <Home />
+    
     {/* <div>
     <button onClick={fetchData}>Check status</button>
       {data.map((item, index) => (

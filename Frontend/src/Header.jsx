@@ -5,7 +5,7 @@ function Header({OpenSidebar}) {
   return (
     <header className='header'>
         <div className='menu-icon'>
-            <BsJustify className='icon' onClick={OpenSidebar}/>
+            {/* <BsJustify className='icon' onClick={OpenSidebar}/> */}
         </div>
         <h1 className='heading'>STUDENT DASHBOARD</h1>
     </header>
