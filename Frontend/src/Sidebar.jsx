@@ -17,7 +17,7 @@ function Sidebar({openSidebarToggle , OpenSidebar}) {
       };
       const displayDataInAlert = (data) => {
 
-        const alertMessage = `Hostel room status: ${data.map(item => item.room_status).join(', ')}`;
+        const alertMessage = `HOSTEL room status: ${data.map(item => item.room_status).join(', ')}`;
         alert(alertMessage);
       }
   return (
