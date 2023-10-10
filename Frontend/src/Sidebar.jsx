@@ -1,5 +1,5 @@
 import React from 'react'
-import { BsPersonCircle,BsFillClipboard2PulseFill, BsFillCheckSquareFill , BsCalendarWeek, BsFillBellFill, BsListCheck, BsFillMenuButtonWideFill, BsFillGearFill } from 'react-icons/bs';
+import { BsPersonCircle,BsFillClipboard2PulseFill, BsFillCheckSquareFill , BsCalendarWeek, BsFillBellFill, BsListCheck,  BsFillGearFill } from 'react-icons/bs';
 import axios from 'axios';
 import { useState } from 'react';
 
@@ -24,7 +24,7 @@ function Sidebar({openSidebarToggle , OpenSidebar}) {
     <aside id='sidebar' className={openSidebarToggle ? "sidebar-responsive" : ""}>
         <div className='sidebar-title'>
             <div className='sidebar-brand'>
-                <BsPersonCircle className='icon_header'/> Student_Name <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRN no
+                 Student_Name <br /> PRN no
             </div>
             <span className='icon close_icon' onClick={OpenSidebar}>X</span>
         </div>
