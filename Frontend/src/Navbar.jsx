@@ -46,21 +46,21 @@ function Navbar() {
         <div className="menu-link">
             <ul>
                 <li>
-                    <a href="">Marks </a>
+                    <a href="/marks">Marks </a>
                 </li>
                 <li>
-                    <a href="">Attendance </a>
+                    <a href="/attendance">Attendance </a>
                 </li>
                 <li>
-                    <a href="">Notifications </a>
+                    <a href="/notifications">Notifications </a>
                 </li>
                 <li>
-                    <a href="">Submit Feedback </a>
+                    <a href="/feedback">Submit Feedback </a>
                 </li>
                 <li>
                   <button onClick={fetchData} style={{
                       color:"#ffffff",
-                      backgroundColor: "#3c80c3",
+                      backgroundColor: "rgb(140, 179, 217)",
                       borderRadius: '8px',
                       padding: '20px'
                   }}>Check Hostel Room Status</button>
