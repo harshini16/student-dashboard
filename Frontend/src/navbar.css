@@ -23,6 +23,7 @@ li {
   /* justify-content: start; */
   align-items: center;
   display: flex;
+  color: #9e9ea4;
 }
 
 .menu-link {

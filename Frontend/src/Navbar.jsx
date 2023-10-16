@@ -62,7 +62,7 @@ function Navbar() {
                       color:"#ffffff",
                       backgroundColor: "rgb(140, 179, 217)",
                       borderRadius: '8px',
-                      padding: '20px'
+                      padding: '5px'
                   }}>Check Hostel Room Status</button>
                 </li>
             </ul>

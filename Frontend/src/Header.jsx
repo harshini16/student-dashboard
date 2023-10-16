@@ -1,15 +1,12 @@
-import React from 'react'
-import { BsPersonCircle} from 'react-icons/bs'
+import React, { useState } from 'react'
 
-function Header({OpenSidebar}) {
+function Header() {
+
   return (
     <header className='header'>
         <h1 className='heading'>STUDENT DASHBOARD</h1> 
-        <div className="header-right">
-            <BsPersonCircle className='icon' />
-        </div>
     </header>
-  )
+  );
 }
 
 export default Header

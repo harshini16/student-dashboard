@@ -1,9 +1,14 @@
 import React from 'react'
 import {BsCalendarWeek , BsFillBellFill } from 'react-icons/bs'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function Home() {
+  const [marksData, setMarksData] = useState([]);
+  const [attendanceData, setAttendanceData] = useState([]);
 
+{/* 
   const data = [
       {
         name: 'Subject 1',
@@ -77,6 +82,50 @@ function Home() {
       },
     ];   
     
+  */}
+  // const data = [
+  //   {y: attendanceData[0].subject1_attendance }
+  // ]
+  useEffect(() => {
+    // Fetch marks data
+    axios.get('http://localhost:8081/student_marks')
+      .then((response) => {
+        setMarksData(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+      axios.get('http://localhost:8081/student_attendance')
+      .then((response) => {
+        setAttendanceData(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+console.log(attendanceData,"tt");
+// console.log(attendanceData[0].subject1_attendance,"kk");
+const generateChartComponents = (data, dataKey, fill) => (
+    <ResponsiveContainer width="100%" height={300}>
+      <BarChart
+        data={data}
+        margin={{
+          top: 5,
+          right: 30,
+          left: 20,
+          bottom: 5,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey={dataKey} fill={fill} />
+      </BarChart>
+    </ResponsiveContainer>
+  );
 
 return (
   <main className='main-container'>
@@ -123,60 +172,10 @@ return (
 
       <div className='charts'>
       {/* <h2>Marks </h2>  */}
-          <ResponsiveContainer width="100%"   height="100%">
-          <BarChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
-          }}
-          >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Bar dataKey="marks"  />
-              {/* {data.map((entry,index)=> (
-                <Bar key={entry.name} dataKey="marks" fill={colors[index]} />
-              ))} */}
-
-              {/* <Bar dataKey="marks" fill={colors[index]}/> */}
-           
-              {/* <Bar dataKey="attendance" fill="#FFBB28" /> */}
-              </BarChart>  
-          </ResponsiveContainer>
-
-          <ResponsiveContainer width="100%"   height="100%">
-          <BarChart
-          width={500}
-          height={300}
-          data={data2}
-          margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
-          }}
-          >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Bar dataKey="attendance" fill="#31708E" />
-
-              {/* {<Bar dataKey="attendance" fill={colors2[index]} />} */}
-              {/* {data.map((entry,index)=> (
-                <Bar key={entry.name} dataKey="attendance" fill={colors2[index]} />
-              ))} */}
-              </BarChart> 
-          </ResponsiveContainer>
-
+      
+      {generateChartComponents(marksData, 'Marks', '#6699cc')}
+      {generateChartComponents(attendanceData, 'Attendance', '#31708E')}
+      
       </div>
   </main>
 )

@@ -11,6 +11,10 @@ body {
   line-height: 1px;
   font-size: 20px;
 }
+//for login-page
+.custom-bg {
+  background-color: #9fbedf;
+}
 
 /* .grid-container {
   display: grid;
@@ -35,6 +39,7 @@ body {
 .heading {
   text-align: center;
   margin: 0;
+  color: #9e9ea4;
 }
 
 .menu-icon {
@@ -82,6 +87,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: #ffffff;
 }
 
 .card-inner > .card_icon {
