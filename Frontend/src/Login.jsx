@@ -9,9 +9,15 @@ const Login = ({setIsAuthenticated }) => {
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
 
-    const paperStyle={padding :20, height: '70vh' , width: 280 , margin: "20px auto"}
+    const paperStyle={padding :20, height: '50vh' , width: 280 , margin: "0 auto"}
     const avatarStyle = {backgroundColor:'#31708E'}
     const textStyle = {margin:'8px 0'}
+    const containerStyle = {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '100vh', // This ensures that the container takes the full viewport height.
+      };
     
     const handleLogin = () => {
         setError('');
@@ -35,26 +41,28 @@ const Login = ({setIsAuthenticated }) => {
       };
 
     return ( 
-        <Grid>
+        <div className='login-container' style={containerStyle}>
             <Paper elevation={10} style={paperStyle}>
-                <Grid align = "center">
-                    <Avatar style={avatarStyle}><LockOutlinedIcon /></Avatar>
-                    <h2>SIGN IN</h2>
+                <Grid>
+                    <Grid align = "center">
+                        <Avatar style={avatarStyle}><LockOutlinedIcon /></Avatar>
+                        <h2>SIGN IN</h2>
+                    </Grid>
+                    <TextField id="outlined-basic" variant="outlined" label='Email-id' placeholder="enter email-id" fullWidth required style={textStyle} value={email} onChange={(e) => setEmail(e.target.value)}/>
+
+                    <TextField id="outlined-basic" variant="outlined" label='Password' placeholder="enter password" type='password' fullWidth required style={textStyle} value={password} onChange={(e) => setPassword(e.target.value)}/>
+
+                    <Button type='submit' color='primary' variant='contained' fullWidth style={textStyle} onClick={handleLogin}> Sign in</Button> 
+                    <Typography>
+                    <Link href="#" >
+                        Forgot password?
+                    </Link>
+                    </Typography>
+                    <Typography variant="subtitle1" style={{ color: 'red', marginTop: '8px' }}>{error}
+                    </Typography>
                 </Grid>
-                <TextField id="outlined-basic" variant="outlined" label='Email-id' placeholder="enter email-id" fullWidth required style={textStyle} value={email} onChange={(e) => setEmail(e.target.value)}/>
-
-                <TextField id="outlined-basic" variant="outlined" label='Password' placeholder="enter password" type='password' fullWidth required style={textStyle} value={password} onChange={(e) => setPassword(e.target.value)}/>
-
-                <Button type='submit' color='primary' variant='contained' fullWidth style={textStyle} onClick={handleLogin}> Sign in</Button> 
-                <Typography>
-                <Link href="#" >
-                    Forgot password?
-                </Link>
-                </Typography>
-                <Typography variant="subtitle1" style={{ color: 'red', marginTop: '8px' }}>{error}
-                </Typography>
             </Paper>
-        </Grid>
+        </div>
      );
 }
  

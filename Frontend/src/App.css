@@ -15,7 +15,13 @@ body {
 .custom-bg {
   background-color: #9fbedf;
 }
-
+.login-container {
+  background-image: url("../src/images/image-2.jpg");
+  background-size: cover; /* Adjusts the image size to cover the entire container */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Optional: Makes the background fixed (non-scrolling) */
+  height: 100vh;
+}
 /* .grid-container {
   display: grid;
   grid-template-columns: 260px 1fr 1fr 1fr;
